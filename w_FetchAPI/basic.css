@@ -1,0 +1,58 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #efefef;
+}
+
+body * {
+    font-family: Helvetica, Geneva, sans-serif;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 1em 0;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1080px;
+    padding: 2rem 1rem 4rem 1rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 2rem;
+}
+
+.container .product {
+    flex: 0 1 30%;
+}
+
+.product h6 {
+    font-size: 1.25rem;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
