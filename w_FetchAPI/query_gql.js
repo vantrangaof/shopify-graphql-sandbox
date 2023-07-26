@@ -1,7 +1,8 @@
-const API_URL = '';
-const ACCESS_TOKEN = '';
-var productList = [];
-var containerELE = document.querySelector('.container');
+const API_URL = process.env.API_URL;
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+
+let productList = [];
+let containerEle = document.querySelector('.container');
 
 const sendQueryUsingGQL = async () => {
     try {
@@ -11,7 +12,6 @@ const sendQueryUsingGQL = async () => {
         };
 
         const reqBody = {
-            // Shopify GQL Exploration: https://shopify.dev/docs/custom-storefronts/building-with-the-storefront-api/api-exploration/graphiql-storefront-api
 
             // Paste your GQL query below
             query: `{
@@ -45,7 +45,7 @@ const sendQueryUsingGQL = async () => {
         showProducts(productList);
 
     } catch (err) {
-        console.log('ERROR DURING FETCH REQUEST', err);
+        console.log('Err during request processing', err);
     }
 }
 
@@ -65,7 +65,7 @@ const showProducts = (products) => {
             </div>
         `
     })
-    containerELE.innerHTML = containerInnerHTML;
+    containerEle.innerHTML = containerInnerHTML;
 }
 
 sendQueryUsingGQL();
